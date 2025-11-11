@@ -1,0 +1,43 @@
+:root {
+  --color-primery-dark: #31261a;
+  --color-primery-light: #faf4ea;
+  --color-brend-light: #819b57;
+  --color-brend-dark: #465929;
+}
+body {
+  color: var(--color-primery-dark);
+}
+ul {
+  list-style-type: none;
+}
+
+.button {
+  color: var(--color-primery-light);
+  background-color: var(--color-brend-light);
+  border: 2px solid var(--color-brend-light);
+  border-radius: 8px;
+  cursor: pointer;
+}
+.button:hover {
+  color: var(--color-brend-dark);
+  background-color: transparent;
+}
+.link {
+  color: var(--color-primery-light);
+}
+.link:hover {
+  color: var(--color-brend-light);
+}
+.hero-title {
+  color: var(--color-primery-light);
+}
+.accent-brend {
+  color: var(--color-brend-light);
+}
+.advantages-list {
+  background-color: var(--color-brend-light);
+  color: var(--color-primery-light);
+}
+.tradirions-section .accent-brend {
+  color: red;
+}
