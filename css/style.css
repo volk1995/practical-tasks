@@ -227,7 +227,7 @@ button:hover {
   content: "";
 }
 .chefs-section .section-tatle {
-  width: 520px;
+  width: 538px;
   margin: 0 auto 80px;
 }
 .chef-photo {
@@ -269,7 +269,23 @@ button:hover {
   font-size: 14px;
   font-weight: 300;
 }
-
+.carousel-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 1px var(--color-primery-dark) solid;
+  cursor: pointer;
+  fill: var(--color-primery-dark);
+}
+.carousel-button:hover {
+  background-color: var(--color-primery-dark);
+  fill: var(--color-primery-light);
+}
 /* Приєднуйся до мережі пекарень     */
 .contact-section .section-tatle {
   margin-bottom: 16px;
@@ -288,6 +304,10 @@ button:hover {
   font-size: 13px;
   color: var(--color-secondary-darck);
 }
+.address-icon {
+  fill: var(--color-brend-light);
+}
+
 .footer {
   background-color: var(--color-primery-dark);
   background-image: url("../images/footer-background.png");
