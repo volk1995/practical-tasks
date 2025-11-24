@@ -35,8 +35,10 @@
 :root {
   --color-primery-dark: #31261a;
   --color-primery-light: #faf4ea;
-  --color-brend-light: #819b57;
   --color-brend-dark: #465929;
+  --color-brend-normal: #819b57;
+  --color-brend-light: #cfcfbc;
+  --color-secondary-darck: #a18268;
 }
 * {
   box-sizing: border-box;
@@ -51,8 +53,7 @@ body {
   font-size: 18px;
   font-weight: 400;
   line-height: 1.5;
-
-  background-color: pink;
+  background-color: var(--color-primery-light);
 }
 ul {
   padding: 0;
@@ -78,8 +79,8 @@ p {
 }
 button {
   color: var(--color-primery-light);
-  background-color: var(--color-brend-light);
-  border: 2px solid var(--color-brend-light);
+  background-color: var(--color-brend-normal);
+  border: 2px solid var(--color-brend-normal);
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
@@ -97,6 +98,9 @@ button:hover {
   font-size: 64px;
   line-height: 1.3;
 }
+.section-tatle.centered {
+  text-align: center;
+}
 .container {
   width: 100%;
   max-width: 1288px;
@@ -111,7 +115,7 @@ button:hover {
   text-decoration: none;
 }
 .link:hover {
-  color: var(--color-brend-light);
+  color: var(--color-brend-normal);
 }
 
 .header-container {
@@ -135,6 +139,18 @@ button:hover {
 /* герой */
 .hero-section {
   padding: 272px 0;
+  background-image: linear-gradient(
+      249deg,
+      rgba(18, 18, 17, 0) 0%,
+      rgba(18, 18, 17, 0.6) 60%,
+      rgba(18, 18, 17, 0.78) 78%
+    ),
+    url("../images/hero-section-background.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  /* background-attachment: fixed; */
+  /* background: url("../images/couple-in-bakery.jpg") center top / cover no-repeat fixed; */
 }
 .hero-title {
   color: var(--color-primery-light);
@@ -145,14 +161,14 @@ button:hover {
 }
 /* додатковий колір */
 .accent-brand {
-  color: var(--color-brend-light);
+  color: var(--color-brend-normal);
 }
 .text-bold {
   font-weight: 600;
 }
 /* Наші переваги */
 .advantages-container {
-  background-color: var(--color-brend-light);
+  background-color: var(--color-brend-normal);
   padding: 16px 0;
 }
 .advantages-list {
@@ -197,15 +213,33 @@ button:hover {
   font-weight: 600;
   margin-bottom: 16px;
 }
+.accent-brand-darck {
+  color: var(--color-brend-dark);
+}
 .tradirions-section {
   margin-bottom: 42px;
 }
-.chefs-section .section-tatle,
-.fotmsts-section .section-tatle {
-  margin-bottom: 80px;
+.chefs-section .section-tatle::after,
+.chefs-section .section-tatle::before {
+  display: block;
+  width: 352px;
+  border: 2px solid var(--color-brend-light);
+  content: "";
+}
+.chefs-section .section-tatle {
+  width: 520px;
+  margin: 0 auto 80px;
+}
+.chef-photo {
+  border-radius: 4px 4px 4px 200px;
+  box-shadow: -16px 16px 0 0 var(--color-primery-light),
+    -16px 16px 0 2px var(--color-secondary-darck);
 }
 
 /* Формати */
+.fotmsts-section .section-tatle {
+  margin-bottom: 80px;
+}
 .format-list {
   display: flex;
   gap: 20px;
@@ -215,9 +249,16 @@ button:hover {
   flex-basis: calc((100% - 40px) / 3);
 }
 .format-card {
-  border: 2px solid greenyellow;
+  border: 2px solid rgb(42, 128, 199); /*remove me*/
+  height: 444px;
   border-radius: 16px;
   padding: 24px;
+  background-image: linear-gradient(
+    180deg /*180 гадусів (можна 0-360+ і left-right...)*/,
+    rgba(49, 38, 26, 0) 55%,
+    rgba(49, 38, 26, 0.71) 73%,
+    rgba(49, 38, 26, 1) 100%
+  );
 }
 .format-title {
   font-size: 40px;
@@ -241,9 +282,16 @@ button:hover {
   font-weight: 300;
 }
 .address-link:hover {
-  color: var(--color-brend-light);
+  color: var(--color-brend-normal);
 }
 .address-copyright {
   font-size: 13px;
-  color: #a18268;
+  color: var(--color-secondary-darck);
+}
+.footer {
+  background-color: var(--color-primery-dark);
+  background-image: url("../images/footer-background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
