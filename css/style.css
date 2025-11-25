@@ -40,7 +40,9 @@
   --color-brend-light: #cfcfbc;
   --color-secondary-darck: #a18268;
 }
-* {
+*,
+*::after,
+*::before {
   box-sizing: border-box;
 }
 body {
@@ -73,6 +75,9 @@ h5,
 h6,
 p {
   margin-top: 0;
+}
+a {
+  display: inline-block;
 }
 .section {
   padding: 48px 0;
@@ -194,7 +199,7 @@ button:hover {
   text-transform: uppercase;
 }
 .tradirions-section {
-  margin-bottom: 96px;
+  padding-top: 96px;
 }
 .tradirions-container {
   display: flex;
@@ -216,9 +221,6 @@ button:hover {
 .accent-brand-darck {
   color: var(--color-brend-dark);
 }
-.tradirions-section {
-  margin-bottom: 42px;
-}
 .chefs-section .section-tatle::after,
 .chefs-section .section-tatle::before {
   display: block;
@@ -235,10 +237,33 @@ button:hover {
   box-shadow: -16px 16px 0 0 var(--color-primery-light),
     -16px 16px 0 2px var(--color-secondary-darck);
 }
+.chefs-item-all {
+  display: flex;
+  gap: 40px 30px;
+  flex-wrap: wrap;
+}
+.chefs-item {
+  flex-basis: calc((100% - 30px) / 2);
+}
+.chef-card {
+  display: flex;
+  gap: 30px;
+}
+.chef-text p {
+  margin-bottom: 24px;
+}
+.chef-text p:last-child {
+  margin-bottom: 0;
+}
 
 /* Формати */
 .fotmsts-section .section-tatle {
   margin-bottom: 80px;
+}
+.formays-container {
+  display: flex;
+  align-items: center;
+  gap: 33px;
 }
 .format-list {
   display: flex;
@@ -273,6 +298,7 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   width: 44px;
   height: 44px;
   padding: 0;
@@ -290,8 +316,37 @@ button:hover {
 .contact-section .section-tatle {
   margin-bottom: 16px;
 }
-
+.contact-section {
+  padding-bottom: 96px;
+}
+.contact-container {
+  display: flex;
+  gap: 32px;
+}
+.contact-map {
+  flex-shrink: 0;
+  border: none;
+  border-radius: 16px;
+}
 /* нижній колонтитул */
+.footer-container {
+  display: flex;
+  padding: 32px;
+  gap: 166px;
+}
+.footer-nav,
+.footer-addres {
+  display: flex;
+  flex-basis: 50%;
+  gap: 166px;
+}
+
+.footer-logo,
+.footer-menu,
+.address-list,
+.address-info {
+  flex-grow: 1;
+}
 .address-link {
   color: var(--color-primery-light);
   font-size: 16px;
