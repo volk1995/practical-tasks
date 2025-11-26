@@ -221,16 +221,24 @@ button:hover {
 .accent-brand-darck {
   color: var(--color-brend-dark);
 }
-.chefs-section .section-tatle::after,
-.chefs-section .section-tatle::before {
-  display: block;
+.chefs-section .section-tatle {
+  margin: 0 auto 80px;
+  position: relative;
+}
+.chefs-section .section-tatle::before,
+.chefs-section .section-tatle::after {
+  position: absolute;
+  bottom: 24px;
   width: 352px;
   border: 2px solid var(--color-brend-light);
   content: "";
 }
-.chefs-section .section-tatle {
-  width: 538px;
-  margin: 0 auto 80px;
+.chefs-section .section-tatle::before {
+  left: -0;
+}
+
+.chefs-section .section-tatle::after {
+  right: -0;
 }
 .chef-photo {
   border-radius: 4px 4px 4px 200px;
@@ -364,9 +372,66 @@ button:hover {
 }
 
 .footer {
+  position: relative;
   background-color: var(--color-primery-dark);
   background-image: url("../images/footer-background.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+.footer::before,
+.footer::after {
+  position: absolute;
+  bottom: 0;
+  background-repeat: no-repeat;
+  content: "";
+}
+.footer::before {
+  left: 0;
+  width: 180px;
+  height: 120px;
+  background-image: url(../images/decor-bread-small.png);
+}
+.footer::after {
+  right: 0;
+  width: 380px;
+  height: 190px;
+  background-image: url(../images/decor-bread-large.png);
+}
+/* модальне вікно modal */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.modal {
+  position: relative;
+  width: 880px;
+  height: 880px;
+  background-color: var(--color-primery-light);
+  border-radius: 32px;
+}
+
+.modal-btn-close {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  color: var(--color-primery-dark);
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
 }

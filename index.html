@@ -31,7 +31,9 @@
               <li><a class="link" href="#contact-section">Контакти</a></li>
             </ul>
           </nav>
-          <button type="button" class="header-button">Замовити дзвінок</button>
+          <button type="button" class="header-button modal-btn-open">
+            Замовити дзвінок
+          </button>
         </div>
       </div>
     </header>
@@ -85,7 +87,9 @@
       <section class="section chefs-section" id="chefs-section">
         <div class="container">
           <h2 class="section-tatle centered">
-            Наші найкращі<span class="accent-brand-darck"> шеф -кухарі</span>
+            Наші найкращі<br /><span class="accent-brand-darck">
+              шеф -кухарі</span
+            >
           </h2>
           <ul class="chefs-item-all">
             <li class="chefs-item">
@@ -299,5 +303,23 @@
         </div>
       </div>
     </footer>
+    <div class="backdrop is-hidden">
+      <div class="modal">
+        <button class="modal-btn-close">X</button>
+        <h2>Замовити дзвінок</h2>
+        <p>Залишіть заявку та наш спеціаліст зв'яжеться з Вами!</p>
+        <form>
+          ><input type="text" />
+          <input type="text" />
+          <input type="text" />
+        </form>
+        <button>Замовити дзвінок</button>
+        <p>
+          Натискаючи на кнопку я погоджуюсь
+          <a href="#">з політикою конфіденційності</a>
+        </p>
+      </div>
+    </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
