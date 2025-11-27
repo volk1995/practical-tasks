@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -31,7 +31,7 @@
               <li><a class="link" href="#contact-section">Контакти</a></li>
             </ul>
           </nav>
-          <button type="button" class="header-button modal-btn-open">
+          <button type="button" class="button header-button modal-btn-open">
             Замовити дзвінок
           </button>
         </div>
@@ -153,6 +153,11 @@
             <ul class="format-list">
               <li class="format-item">
                 <article class="format-card">
+                  <img
+                    class="format-img"
+                    src="./images/Walrus-fromat.jpg"
+                    alt="Walrus fromat"
+                  />
                   <h3 class="format-title" lang="en">Walrus</h3>
                   <div class="format-text">
                     <p>Площа: до 120 м2</p>
@@ -168,6 +173,11 @@
 
               <li class="format-item">
                 <article class="format-card">
+                  <img
+                    class="format-img"
+                    src="./images/Horseshoe-fromat.jpg"
+                    alt="Horseshoe fromat"
+                  />
                   <h3 class="format-title" lang="en">Horseshoe</h3>
                   <div class="format-text">
                     <p>Площа: до 25 м2</p>
@@ -183,6 +193,11 @@
 
               <li class="format-item">
                 <article class="format-card">
+                  <img
+                    class="format-img"
+                    src="./images/Handlebar-fromat.jpg"
+                    alt="Handlebar fromat"
+                  />
                   <h3 class="format-title" lang="en">Handlebar</h3>
                   <div class="format-text">
                     <p>Площа: до 15 м2</p>
@@ -212,7 +227,7 @@
             <div class="contact-form">
               <h2 class="section-tatle">Приєднуйся до мережі пекарень</h2>
               <p>Заповни форму, щоб ми звʼязались з тобою!</p>
-              <form name="contact-form" autocomplete="off" novalidate>
+              <form name="contact-form" autocomplete="off">
                 <div class="form-field">
                   <label class="form-label visually-hodden" for="user-name"
                     >Ім’я</label
@@ -223,6 +238,7 @@
                     id="user-name"
                     name="user-name"
                     placeholder="Ім’я"
+                    required
                   />
                 </div>
 
@@ -236,6 +252,7 @@
                     name="user-tel"
                     id="user-tel"
                     placeholder="Телефон"
+                    required
                   />
                 </div>
                 <div class="form-field">
@@ -248,9 +265,10 @@
                     name="user-email"
                     id="user-email"
                     placeholder="Електронна пошта"
+                    required
                   />
                 </div>
-                <button class="form-button" type="submit">
+                <button class="button form-button" type="submit">
                   Замовити дзвінок
                 </button>
                 <p class="form-terms">
@@ -337,12 +355,12 @@
       </div>
     </footer>
     <div class="backdrop is-hidden">
-      <!-- -->
+      <!--is-hidden -->
       <div class="modal">
         <button class="modal-btn-close">X</button>
         <h2>Замовити дзвінок</h2>
         <p>Залишіть заявку та наш спеціаліст зв'яжеться з Вами!</p>
-        <form name="mofal-form" autocomplete="off" novalidate>
+        <form name="mofal-form" autocomplete="off">
           <div class="form-field">
             <label class="form-label visually-hodden" for="user-name"
               >Ім’я</label
@@ -353,6 +371,7 @@
               id="user-name"
               name="user-name"
               placeholder="Ім’я"
+              required
             />
           </div>
 
@@ -366,6 +385,7 @@
               name="user-tel"
               id="user-tel"
               placeholder="Телефон"
+              required
             />
           </div>
           <div class="form-field">
@@ -378,9 +398,12 @@
               name="user-email"
               id="user-email"
               placeholder="Електронна пошта"
+              required
             />
           </div>
-          <button class="form-button" type="submit">Замовити дзвінок</button>
+          <button class="button form-button" type="submit">
+            Замовити дзвінок
+          </button>
           <p class="form-terms">
             Натискаючи на кнопку я погоджуюсь
             <a class="form-terms-link" href="#">з політикою конфіденційності</a>

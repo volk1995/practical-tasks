@@ -1,0 +1,19 @@
+.button {
+  color: var(--color-primery-light);
+  background-color: var(--color-brend-normal);
+  border: 2px solid var(--color-brend-normal);
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 18px;
+  width: 232px;
+  height: 59px;
+  padding: 16px 32px;
+}
+.button:hover {
+  color: var(--color-brend-dark);
+  background-color: transparent;
+}
+.section {
+  padding: 48px 0;
+}

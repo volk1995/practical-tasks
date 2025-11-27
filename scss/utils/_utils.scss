@@ -1,0 +1,14 @@
+//допоміжні класи, міксини, функції та утиліти
+.section-tatle {
+  font-weight: 900;
+  font-size: 64px;
+  line-height: 1.3;
+}
+.visually-hodden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
