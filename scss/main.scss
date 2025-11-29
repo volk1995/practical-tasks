@@ -19,7 +19,45 @@
 
 @import "./utils/texts";
 //
+/*пагінація _pagination.scss*/
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
 
+  &__button {
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    background-color: var(--color-secondary-darck);
+    border-radius: 50%;
+
+    &--active {
+      background-color: var(--color-brend-normal);
+    }
+  }
+}
+/*mobil _mobile-menu.scss*/
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-primery-light);
+  transition: transform 0.3s;
+  transform: translateX(100%);
+
+  &.is-open {
+    transform: translateX(0);
+  }
+  &__btn-close {
+    position: absolute;
+    top: 16px;
+    right: 24px;
+  }
+}
 /*_container.scss \/*/
 .container {
   width: 100%;
@@ -29,11 +67,17 @@
 }
 /*_section.scss */
 .section {
-  padding: 48px 0;
+  padding: 20px 0;
+  @media screen and (min-width: $bp-desktop) {
+    padding: 48px 0;
+  }
   &__title {
     font-weight: 900;
-    font-size: 64px;
-    line-height: 1.3;
+    font-size: 32px;
+    @media screen and (min-width: $bp-tablet) {
+      font-size: 64px;
+      line-height: 1.3;
+    }
     &--centered {
       text-align: center;
     }
@@ -41,30 +85,48 @@
 }
 /* Наші переваги  _advantages-section.scss \/*/
 .advantages-section {
-  background-color: var(--color-brend-normal);
-  padding: 16px 0;
+  padding: 40px 0 20px;
 
+  @media screen and (min-width: $bp-tablet) {
+    padding: 16px 0;
+    background-color: var(--color-brend-normal);
+  }
   &__list {
     display: flex;
-    justify-content: space-between;
-    gap: 40px;
-
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px 40px;
+    background-color: var(--color-brend-light);
+    border-radius: 24px;
+    @media screen and (min-width: $bp-tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 40px;
+      background-color: transparent;
+      padding: 0;
+    }
     // li {color: var(--color-primery-light);
     // font-size: 20px; font-weight: 300;}
   }
   &__item {
-    color: var(--color-primery-light);
-    font-size: 20px;
+    font-size: 14px;
     font-weight: 300;
+    @media screen and (min-width: $bp-tablet) {
+      color: var(--color-primery-light);
+      font-size: 20px;
+    }
   }
 }
-
 /* Новий формат традицій _traditions-section.scss \/*/
-
 .tradirions-section {
-  padding-top: 96px;
+  // padding-top: 40px;
+  @media screen and (min-width: $bp-tablet) {
+    padding-top: 96px;
+  }
+
   &__container {
     display: flex;
+    align-items: flex-start;
     justify-content: space-between;
     gap: 40px;
   }
@@ -79,62 +141,92 @@
     margin-top: 42px;
   }
   &__image {
-    border-radius: 400px 400px 0px 0px;
+    display: none;
+    @media screen and (min-width: $bp-tablet) {
+      border-radius: 400px 400px 0px 0px;
+      display: block;
+    }
   }
 }
-
 /* Наші найкращі шеф -кухарі _chefs-section.scss \/*/
 .chefs-section {
   &__title {
-    margin: 0 auto 80px;
+    margin: 0 auto 24px;
     position: relative;
   }
-  &__title::before,
-  &__title::after {
-    position: absolute;
-    bottom: 24px;
-    width: 352px;
-    border: 2px solid var(--color-brend-light);
-    content: "";
-  }
-  &__title::before {
-    left: -0;
-  }
-  &__title::after {
-    right: -0;
+  @media screen and (min-width: $bp-desktop) {
+    margin-bottom: 80px;
+
+    &__title::before,
+    &__title::after {
+      position: absolute;
+      bottom: 24px;
+      width: 352px;
+      border: 2px solid var(--color-brend-light);
+      content: "";
+    }
+    &__title::before {
+      left: -0;
+    }
+    &__title::after {
+      right: -0;
+    }
   }
   &__list {
     display: flex;
-    gap: 40px 30px;
+    flex-direction: column;
     flex-wrap: wrap;
+    gap: 20px;
+    @media screen and (min-width: $bp-tablet) {
+      flex-direction: row;
+      gap: 40px 30px;
+    }
   }
   &__item {
-    flex-basis: calc((100% - 30px) / 2);
+    @media screen and (min-width: $bp-tablet) {
+      flex-basis: calc((100% - 30px) / 2);
+    }
   }
 }
-
 /*_chef-card.scss*/
 .chef-card {
   display: flex;
-  gap: 30px;
+  align-items: flex-start;
+  gap: 16px;
+  @media screen and (min-width: $bp-desktop) {
+    gap: 30px;
+  }
   &__photo {
-    border-radius: 4px 4px 4px 200px;
-    box-shadow: -16px 16px 0 0 var(--color-primery-light),
-      -16px 16px 0 2px var(--color-secondary-darck);
+    width: 140px;
+    border-radius: 2px 2px 2px 116px;
+    box-shadow: -10px 10px 0 0 var(--color-primery-light),
+      -10px 10px 0 2px var(--color-secondary-darck);
+    @media screen and (min-width: $bp-desktop) {
+      width: 240px;
+      border-radius: 4px 4px 4px 200px;
+      box-shadow: -16px 16px 0 0 var(--color-primery-light),
+        -16px 16px 0 2px var(--color-secondary-darck);
+    }
   }
   &__title {
-    font-size: 64px;
     font-weight: 600;
+    font-size: 24px;
     margin-bottom: 16px;
+    @media screen and (min-width: $bp-desktop) {
+      font-size: 40px;
+    }
   }
   &__text {
+    font-size: 16px;
     margin-bottom: 24px;
+    @media screen and (min-width: $bp-tablet) {
+      font-size: 18px;
+    }
     &:last-child {
       margin-bottom: 0;
     }
   }
 }
-
 /* Формати  _formats-section.scss \/*/
 .formats-section {
   &__title {
@@ -143,25 +235,30 @@
   &__slider {
     display: flex;
     align-items: center;
-    gap: 33px;
+    gap: 32px;
+  }
+  &__container {
+    overflow: hidden;
   }
   &__list {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
+    margin-bottom: 32px;
   }
-  &__item {
-    flex-basis: calc((100% - 40px) / 3);
+  &__button {
+    display: none;
+
+    @media screen and (min-width: $bp-tablet) {
+      display: flex;
+    }
   }
 }
 /*_format-card.scss*/
 .format-card {
+  overflow: hidden;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   height: 444px;
-  border-radius: 16px;
   padding: 24px;
   background-image: linear-gradient(
     180deg /*180 гадусів (можна 0-360+ і left-right...)*/,
@@ -169,12 +266,8 @@
     rgba(49, 38, 26, 0.71) 73%,
     rgba(49, 38, 26, 1) 100%
   );
-  // transition: transform 0.3s; //remov me
+  border-radius: 16px;
 
-  &:hover {
-    //remov me
-    transform: scale(1.05);
-  }
   &__image {
     position: absolute;
     top: 0;
@@ -197,7 +290,6 @@
 }
 /*_carousel-button.scss*/
 .carousel-button {
-  display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
@@ -217,15 +309,18 @@
     transform: rotate(180deg);
   }
 }
-
 /* Приєднуйся до мережі пекарень    _contact-section.scss \/ */
-
 .contact-section {
   padding-bottom: 96px;
 
   &__container {
     display: flex;
-    gap: 32px;
+    flex-direction: column;
+    gap: 24px;
+    @media screen and (min-width: $bp-tablet) {
+      gap: 32px;
+      flex-direction: row;
+    }
   }
   &__title {
     margin-bottom: 16px;
@@ -238,10 +333,21 @@
   &__form-field {
     margin-bottom: 24px;
   }
-  &__form-map {
+  &__map {
     flex-shrink: 0;
-    border: none;
+    height: 176px;
+    margin: 0 -24px;
     border-radius: 16px;
+    border: none;
+    @media screen and (min-width: $bp-tablet) {
+      margin: auto;
+      width: 280px;
+      height: 500px;
+    }
+    @media screen and (min-width: $bp-desktop) {
+      width: 600px;
+      height: 595px;
+    }
   }
 }
 /* form  _input.scss*/
@@ -292,6 +398,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+
   &::before,
   &::after {
     position: absolute;
@@ -313,14 +420,28 @@
   }
   &__container {
     display: flex;
-    padding: 32px;
-    gap: 166px;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    @media screen and (min-width: $bp-desktop) {
+      flex-direction: row;
+      flex-basis: 50%;
+      gap: 166px;
+      text-align: left;
+      padding: 32px;
+    }
   }
   &__nav,
   &__address {
     display: flex;
-    flex-basis: 50%;
-    gap: 166px;
+    flex-direction: column;
+    gap: 20px;
+
+    @media screen and (min-width: $bp-desktop) {
+      flex-direction: row;
+      flex-basis: 50%;
+      gap: 166px;
+    }
   }
 
   &__logo,
@@ -329,26 +450,25 @@
   &__address-info {
     flex-grow: 1;
   }
-  &__address-link {
-    color: var(--color-primery-light);
-    font-size: 16px;
-    font-weight: 300;
-    &:hover {
-      color: var(--color-brend-normal);
+  &__address {
+    &-link {
+      color: var(--color-primery-light);
+      font-size: 16px;
+      font-weight: 300;
+      &:hover {
+        color: var(--color-brend-normal);
+      }
+    }
+    &-copyright {
+      font-size: 13px;
+      color: var(--color-secondary-darck);
+    }
+    &-icon {
+      fill: var(--color-brend-light);
     }
   }
-
-  &-copyright {
-    font-size: 13px;
-    color: var(--color-secondary-darck);
-  }
-  &-icon {
-    fill: var(--color-brend-light);
-  }
 }
-
 /* модальне вікно _modal.scss \/ */
-
 .backdrop {
   position: fixed;
   top: 0;
@@ -358,6 +478,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 24px;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
   transition: opacity 0.3s, visibility 0.3s;
@@ -373,10 +494,13 @@
   max-width: 880px;
   height: 100%;
   max-height: 880px;
-  padding: 128px;
+  padding: 48px;
   background-color: var(--color-primery-light);
   border-radius: 32px;
   overflow-y: auto;
+  @media screen and (min-width: $bp-tablet) {
+    padding: 128px;
+  }
   &-btn-close {
     position: absolute;
     top: 40px;
